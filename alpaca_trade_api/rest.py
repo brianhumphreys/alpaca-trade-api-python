@@ -170,6 +170,7 @@ class REST(object):
                 raise
         if resp.text != '':
             return resp.json()
+
         return None
 
     def get(self, path, data=None):
@@ -563,6 +564,7 @@ class REST(object):
             print('RESPONSE')
             print(resp)
             items = resp.get(endpoint, [])
+            print(items)
             for item in items:
                 yield item
             total_items += len(items)
