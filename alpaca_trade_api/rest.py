@@ -171,7 +171,8 @@ class REST(object):
         if resp.text != '':
             return resp.json()
 
-        return None
+        # return None
+        return []
 
     def get(self, path, data=None):
         return self._request('GET', path, data)
