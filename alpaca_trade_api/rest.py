@@ -136,7 +136,10 @@ class REST(object):
             retry = 0
         while retry >= 0:
             try:
-                return self._one_request(method, url, opts, retry)
+                result = self._one_request(method, url, opts, retry)
+                print('MID RESULT 1')
+                print(result)
+                return result
             except RetryException:
                 retry_wait = self._retry_wait
                 logger.warning(
@@ -169,8 +172,12 @@ class REST(object):
             else:
                 raise
         if resp.text != '':
+            print('MID RESULT 2')
+            print(resp.json())
             return resp.json()
 
+        print('MID RESULT 3')
+        print(resp)
         # return None
         return []
 
