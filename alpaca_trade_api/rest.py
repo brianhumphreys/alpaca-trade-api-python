@@ -559,6 +559,9 @@ class REST(object):
             data = kwargs
             data['limit'] = actual_limit
             data['page_token'] = page_token
+            print('GET DATA')
+            print(symbol)
+            print(endpoint)
             resp = self.data_get('/stocks/{}/{}'.format(symbol, endpoint),
                                  data=data, api_version='v2')
             print('RESPONSE DATA V3')
