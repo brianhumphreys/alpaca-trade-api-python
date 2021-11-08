@@ -174,7 +174,12 @@ class REST(object):
         if resp.text != '':
             print('MID RESULT 2')
             print(resp.json())
-            return resp.json()
+            result = resp.json()
+
+            if result['bars'] == None:
+                result['bars'] = []
+
+            return result
 
         print('MID RESULT 3')
         print(resp)
