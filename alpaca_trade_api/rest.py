@@ -561,7 +561,7 @@ class REST(object):
             data['page_token'] = page_token
             resp = self.data_get('/stocks/{}/{}'.format(symbol, endpoint),
                                  data=data, api_version='v2')
-            print('RESPONSE')
+            print('RESPONSE DATA V3')
             print(resp)
             items = resp.get(endpoint, [])
             print(items)
