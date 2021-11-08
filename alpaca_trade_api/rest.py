@@ -205,6 +205,7 @@ class REST(object):
         base_url: URL = get_data_url()
         print('base')
         print(base_url)
+        print(path)
         return self._request(
             'GET', path, data, base_url=base_url, api_version=api_version,
         )
