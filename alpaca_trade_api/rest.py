@@ -90,6 +90,9 @@ class REST(object):
         :param raw_data: should we return api response raw or wrap it with
                          Entity objects.
         """
+        print('SECRETS')
+        print('key ID: ', key_id)
+        print('secret key: ', secret_key)
         self._key_id, self._secret_key, self._oauth = get_credentials(
             key_id, secret_key, oauth)
         self._base_url: URL = URL(base_url or get_base_url())
