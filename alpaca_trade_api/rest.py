@@ -583,8 +583,8 @@ class REST(object):
             print(endpoint)
             resp = self.data_get('/stocks/{}/{}'.format(symbol, endpoint),
                                  data=data, api_version='v2')
-            # print('RESPONSE DATA V3')
-            # print(resp)
+            print('RESPONSE DATA V3')
+            print(resp)
             items = resp.get(endpoint, [])
             print(items)
             for item in items:
