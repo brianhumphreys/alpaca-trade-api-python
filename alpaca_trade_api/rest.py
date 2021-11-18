@@ -140,6 +140,8 @@ class REST(object):
         while retry >= 0:
             try:
                 result = self._one_request(method, url, opts, retry)
+                print('MID RESULT 1')
+                print(result)
                 return result
             except RetryException:
                 retry_wait = self._retry_wait
@@ -173,6 +175,8 @@ class REST(object):
             else:
                 raise
         if resp.text != '':
+            # print('MID RESULT 2')
+            # print(resp.json())
             result = resp.json()
 
             if result['bars'] == None:
@@ -180,6 +184,8 @@ class REST(object):
 
             return result
 
+        # print('MID RESULT 3')
+        # print(resp)
         # return None
         return []
 
@@ -200,6 +206,9 @@ class REST(object):
 
     def data_get(self, path, data=None, api_version='v1'):
         base_url: URL = get_data_url()
+        print('base')
+        print(base_url)
+        print(path)
         return self._request(
             'GET', path, data, base_url=base_url, api_version=api_version,
         )
@@ -571,13 +580,13 @@ class REST(object):
             data['page_token'] = page_token
             # print('GET DATA')
             # print(symbol)
-            # print(endpoint)
+            print(endpoint)
             resp = self.data_get('/stocks/{}/{}'.format(symbol, endpoint),
                                  data=data, api_version='v2')
             # print('RESPONSE DATA V3')
             # print(resp)
             items = resp.get(endpoint, [])
-            # print(items)
+            print(items)
             for item in items:
                 yield item
             total_items += len(items)
