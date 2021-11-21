@@ -173,6 +173,7 @@ class REST(object):
 
             # this only works sometimes???
             result = resp.json()
+            print(url)
             print(result)
             if result['bars'] == None:
                 result['bars'] = []
