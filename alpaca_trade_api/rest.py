@@ -571,7 +571,7 @@ class REST(object):
                                  data=data, api_version='v2')
             items = resp.get(endpoint, [])
             print('ITEMS')
-            print(items)
+            print(type(items))
             for item in items:
                 yield item
             total_items += len(items)
