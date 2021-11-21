@@ -169,12 +169,15 @@ class REST(object):
             else:
                 raise
         if resp.text != '':
-            result = resp.json()
-            print(result)
-            if result['bars'] == None:
-                result['bars'] = []
+            return resp.json()
 
-            return result
+            # this only works sometimes???
+            # result = resp.json()
+            # print(result)
+            # if result['bars'] == None:
+            #     result['bars'] = []
+
+            # return result
 
         return []
 
