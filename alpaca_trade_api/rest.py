@@ -171,11 +171,14 @@ class REST(object):
         if resp.text != '':
             result = resp.json()
             print(url)
-            print(result)
+            # print(result)
             try:
-                print(result['bars'])
+                # print(result['bars'])
+
+                if result['bars'] == None:
+                    result['bars'] = []
             except:
-                print('no balls')
+                print('No bars on endpoint: {}'.format(url))
             return result
             # this only works sometimes???
             # result = resp.json()
