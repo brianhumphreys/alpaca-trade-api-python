@@ -172,6 +172,7 @@ class REST(object):
             result = resp.json()
             print(url)
             print(result)
+            print(result['bars'])
             return result
             # this only works sometimes???
             # result = resp.json()
