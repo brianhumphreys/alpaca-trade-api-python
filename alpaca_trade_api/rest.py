@@ -172,7 +172,10 @@ class REST(object):
             result = resp.json()
             print(url)
             print(result)
-            print(result['bars'])
+            try:
+                print(result['bars'])
+            except:
+                print('no balls')
             return result
             # this only works sometimes???
             # result = resp.json()
