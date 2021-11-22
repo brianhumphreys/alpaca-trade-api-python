@@ -505,6 +505,7 @@ class Stream:
                              self._data_ws._run_forever())
 
     def run(self):
+        print('init of run(self) function')
         loop = asyncio.get_event_loop()
         try:
             loop.run_until_complete(self._run_forever())
