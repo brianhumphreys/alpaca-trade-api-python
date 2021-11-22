@@ -170,7 +170,6 @@ class REST(object):
                 raise
         if resp.text != '':
             result = resp.json()
-            print(url)
             # print(result)
             try:
                 # print(result['bars'])
@@ -178,7 +177,9 @@ class REST(object):
                 if result['bars'] == None:
                     result['bars'] = []
             except:
-                print('No bars on endpoint: {}'.format(url))
+                # NO BARS
+                # print('No bars on endpoint: {}'.format(url))
+                _ = 3
             return result
             # this only works sometimes???
             # result = resp.json()
@@ -580,8 +581,8 @@ class REST(object):
             resp = self.data_get('/stocks/{}/{}'.format(symbol, endpoint),
                                  data=data, api_version='v2')
             items = resp.get(endpoint, [])
-            print('ITEMS')
-            print(type(items))
+            # print('ITEMS')
+            # print(type(items))
             for item in items:
                 yield item
             total_items += len(items)
