@@ -160,6 +160,7 @@ class REST(object):
             resp.raise_for_status()
         except HTTPError as http_error:
             # retry if we hit Rate Limit
+            print('Status Code: {}'.format(resp.status_code))
             if resp.status_code in retry_codes and retry > 0:
                 raise RetryException()
             if 'code' in resp.text:
