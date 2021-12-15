@@ -185,6 +185,8 @@ class DataStream:
         self._subscribe(handler, symbols, self._trade_handlers)
 
     def subscribe_quotes(self, handler, *symbols):
+        print('SYMBOOOOOOOOOOOOLS')
+        print(symbols)
         self._subscribe(handler, symbols, self._quote_handlers)
 
     def subscribe_bars(self, handler, *symbols):
